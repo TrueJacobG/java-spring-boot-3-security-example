@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "fec39565-796c-4cb6-a30e-091ceb88d45c",
+		"name": "java-spring-boot-3-security-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20931775"
+	},
+	"item": [
+		{
+			"name": "healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@mail.com\",\n    \"password\": \"SecurePassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@mail.com\",\n    \"password\": \"SecurePassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@mail.com\",\n    \"password\": \"SecurePassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "example admin only",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "a1qQu9yi5uDTLgZXp2VeOybLo0Y060hPftU5ShKVoz4AicHLvThtzrNcd203LnXxMRyya8P2LakZDIVk6sf9RvIsgufxuXkvrNwzAZCOEqYSMIeO7biBBH8Elz1Eprdd7MQKi61TTCfvIDt10Srkf8NI89hgh4v2N2Ef7IGLwSFNvOFGDLR0I2aufJ4g4Ckg1XpJD7oS4HoCQogYIYkoNXxncSjeFFHQUS35qIpI2WWVyTF0bi6iSgaKfs16X9G",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/example/admin/only",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"example",
+						"admin",
+						"only"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "example admin with user token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "a1qQu9yi5uDTLgZXp2VeOybLo0Y060hPftU5ShKVoz4AicHLvThtzrNcd203LnXxMRyya8P2LakZDIVk6sf9RvIsgufxuXkvrNwzAZCOEqYSMIeO7biBBH8Elz1Eprdd7MQKi61TTCfvIDt10Srkf8NI89hgh4v2N2Ef7IGLwSFNvOFGDLR0I2aufJ4g4Ckg1XpJD7oS4HoCQogYIYkoNXxncSjeFFHQUS35qIpI2WWVyTF0bi6iSgaKfs16X9G",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/example/admin/only",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"example",
+						"admin",
+						"only"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mysql:9.1.0
+    env_file: .env
+    ports:
+      - ${MYSQL_PORT}:3306/tcp
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "127.0.0.1" ]
+      timeout: 15s
+      retries: 2
+      interval: 60s
+      start_period: 30s
