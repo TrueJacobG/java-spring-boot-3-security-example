@@ -22,7 +22,7 @@ public class AuthService {
 
     private final UserService userService;
 
-    private final TokenRepository tokenRepository;
+    private final AuthRepository authRepository;
 
     public TokenDto login(LoginDto loginDto) {
         var user = userService.findByEmail(loginDto.email(), loginDto.password());
@@ -31,7 +31,7 @@ public class AuthService {
     }
 
     public LoginUserResponseDto getInfoFromToken(String tokenValue) {
-        var token = tokenRepository.findByValue(tokenValue)
+        var token = authRepository.findByValue(tokenValue)
                 .orElseThrow(() -> new InvalidTokenException("No token matches given token"));
 
         if (!isValid(token)) {
@@ -42,7 +42,7 @@ public class AuthService {
     }
 
     public User getUserFromToken(String tokenValue) {
-        var token = tokenRepository.findByValue(tokenValue)
+        var token = authRepository.findByValue(tokenValue)
                 .orElseThrow(() -> new InvalidTokenException("Invalid token, token: [%s] is unknown for application".formatted(tokenValue)));
 
         if (!isValid(token)) {
@@ -54,7 +54,7 @@ public class AuthService {
     }
 
     public TokenDto renewToken(TokenDto tokenDto) {
-        var token = tokenRepository.findByValue(tokenDto.token())
+        var token = authRepository.findByValue(tokenDto.token())
                 .orElseThrow(() -> new InvalidTokenException("Invalid token, token: [%s] is unknown for application".formatted(tokenDto.token())));
 
         if (token.isRemoved()) {
@@ -75,7 +75,7 @@ public class AuthService {
                 .updatedAt(Instant.now())
                 .build();
 
-        tokenRepository.saveAndFlush(token);
+        authRepository.saveAndFlush(token);
         return new TokenDto(tokenValue);
     }
 
@@ -85,6 +85,6 @@ public class AuthService {
 
     private void deleteToken(Token token) {
         token.setRemoved(true);
-        tokenRepository.saveAndFlush(token);
+        authRepository.saveAndFlush(token);
     }
 }

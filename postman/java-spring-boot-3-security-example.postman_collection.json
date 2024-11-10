@@ -149,7 +149,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "a1qQu9yi5uDTLgZXp2VeOybLo0Y060hPftU5ShKVoz4AicHLvThtzrNcd203LnXxMRyya8P2LakZDIVk6sf9RvIsgufxuXkvrNwzAZCOEqYSMIeO7biBBH8Elz1Eprdd7MQKi61TTCfvIDt10Srkf8NI89hgh4v2N2Ef7IGLwSFNvOFGDLR0I2aufJ4g4Ckg1XpJD7oS4HoCQogYIYkoNXxncSjeFFHQUS35qIpI2WWVyTF0bi6iSgaKfs16X9G",
+						"value": "2w34lHAxJcPTFkXflRShL8NQa9dlTd1guUJ2zlvNQj0aT7suwmGPhluulbZfVLZtrrbRuWfGqDisiESYi4vWCenz3URdRqnsDM7ZLW76AiEuod05LrjiYK5eBdWF2p7m2VtuJ4aXt0AiYEpkRsf4oyQjFNQ4gmxt3mHM3T5EBAvPTJEeYinBc0E6AeVvbbo1qtIQ3BOjbrUSA1qExoQwYYQYCBmoCNdJiIE2zoHnjeW06YZV2lBgyegrF7tXlDP",
 						"type": "text"
 					}
 				],
@@ -165,6 +165,33 @@
 						"example",
 						"admin",
 						"only"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all authenticated",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "3RH6hvbCibf7sXoXYbx8oPyLfq9buoiyEEerzgoxefQN9d0vAYifRK8nBSBqvmo7JTiJAaze5hChtIn6syRgx5HYpmgMgFuqZYuZTv1cqD2GAhRIvQ1FRCcDT52md9xfchdlruUfgJeHamq3LAIGTsyaSwEsZkrHbXQCdxheHaTZ5qr0qnck5GSvPAYzP81FOZsHBwoZa0QuYGcicdWno6UuwSvtHSXjzgYx89gLVgD5y0ZXm495KmoykoZ99M5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/example/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"example",
+						"all"
 					]
 				}
 			},
