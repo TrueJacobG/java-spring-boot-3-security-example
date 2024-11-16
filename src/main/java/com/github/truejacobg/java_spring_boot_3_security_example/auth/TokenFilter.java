@@ -1,6 +1,5 @@
-package com.github.truejacobg.java_spring_boot_3_security_example.config;
+package com.github.truejacobg.java_spring_boot_3_security_example.auth;
 
-import com.github.truejacobg.java_spring_boot_3_security_example.auth.AuthService;
 import com.github.truejacobg.java_spring_boot_3_security_example.exception.GlobalException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

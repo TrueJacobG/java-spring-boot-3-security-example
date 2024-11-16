@@ -1,5 +1,6 @@
 package com.github.truejacobg.java_spring_boot_3_security_example.config;
 
+import com.github.truejacobg.java_spring_boot_3_security_example.auth.TokenFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

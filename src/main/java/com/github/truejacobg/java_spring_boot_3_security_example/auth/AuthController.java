@@ -6,7 +6,6 @@ import com.github.truejacobg.java_spring_boot_3_security_example.user.dto.LoginU
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +29,7 @@ public class AuthController {
     }
 
     @PostMapping("/renew")
-    ResponseEntity<TokenDto> renewToken(@RequestBody TokenDto token){
+    ResponseEntity<TokenDto> renewToken(@RequestBody TokenDto token) {
         return ResponseEntity.ok(authService.renewToken(token));
     }
 }
