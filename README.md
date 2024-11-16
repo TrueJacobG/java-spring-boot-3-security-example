@@ -1,4 +1,20 @@
-##
+### Info:
+
+Basic stateless token authentication in Spring Boot 3 (Spring & Spring Security 6)
+Email && Password authorization
+Simple example repo
+
+---
+
+### Tech stack:
+    - Java 21
+    - Spring Boot 3
+    - Spring 6
+    - Gradle
+    - MySql (in docker)
+    - Postman (for testing)
+
+---
 
 ### Steps to run the project:
 
