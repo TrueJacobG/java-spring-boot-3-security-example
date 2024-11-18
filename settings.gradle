@@ -1,1 +1,9 @@
 rootProject.name = 'java-spring-boot-3-security-example'
+
+gradle.settingsEvaluated {
+    buildCache {
+        local {
+            removeUnusedEntriesAfterDays = 30
+        }
+    }
+}
